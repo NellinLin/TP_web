@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h4>Hot Questions <img src="{% static 'image/fire1.png' %}" class="hot_picture"></h4>
+
+{% for question in page_obj %}
+<!--Post-->
+<div class="post_padding">
+<div class="row padding_2_p border margin_for_row padding_top_2">
+    <!--Горизонтальное поле-->
+    <div class="left_col_reg padding_right col-md-2">
+        <img src="/{{question.author.avatar}}" class="img_avatar"></img>
+                <p></p>
+                <div class="col_padding_left">{{question.rating}}</div>
+                <div class="btn-group" >
+                        <button type="button" class="button_like">+</button>
+                        <button type="button" >-</button>
+                </div>
+    </div>
+
+    <div class="left_col_reg col-md-10 mb-3" >
+        <h2 class="header2"><a href="{% url 'question' question.id %}">{{question.title}}</a></h2>
+        <p class="normal_text">{{question.text}}</p>
+        <p class="normal_text"><a href="{% url 'question' question.id %}">answer({{question.answer_set.count}})</a>
+
+            <span class="left_padding">Tags:
+                {% for tag in question.tags.all %}
+                <a href="#">{{tag.title}}</a>
+                {% endfor %}
+            </span>
+        </p>
+    </div>
+</div>
+</div>
+<!---->
+{% endfor %}
+
+
+{% block pagination %}
+	{% include 'questions/include/pagination.html' %}
+{% endblock %}
+
+{% endblock %}

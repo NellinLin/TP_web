@@ -1,0 +1,215 @@
+span.Green{
+    color:green;
+    font-weight: bold;
+}
+
+span.Red{
+    color:red;
+    font-weight: bold;
+}
+
+span.Yellow{
+    color:#F4A900;
+    font-weight: bold;
+}
+
+span.small_text{
+    padding-left:5%;
+    font-size:15px;
+}
+
+span.left_padding{
+    padding-left:10%;
+}
+
+body{
+    font-family: Comic Sans MS;
+    <!--font-family: Arial;-->
+}
+
+h4{
+
+}
+
+.site_header{
+    font-weight: bold;
+    font-size:25px;
+}
+
+.border{
+    outline:4px;
+}
+
+img{
+    width: 50px;
+}
+.img_avatar{
+    margin-left: 5%;
+}
+
+.hot_picture{
+    width: 30px;
+    margin-bottom: 2%;
+}
+
+.img_nav {
+    margin-left:15px;
+}
+
+.img_width{
+    width: 100px;
+}
+
+.padding_nav{
+    padding-top: 2%;
+    padding-left:2%
+}
+
+.align_left_nav{
+    text-align:left;
+}
+
+.c{
+    padding-right: 5%;
+    padding-left: 5%;
+}
+
+.text-dark {
+    color: #343a40;
+}
+
+.header2{
+    font-size:23px;
+}
+
+a{
+    text-decoration:underline;
+}
+
+.with_out_line{
+    text-decoration: none;
+}
+
+a.des{
+    color:black;
+    text-decoration: none;
+}
+
+.underline{
+   text-decoration:underline;
+}
+.top_padding{
+    padding-top: 5%;
+}
+
+.button_like{
+    margin-left: 10%;
+}
+
+.numbers_top_padding{
+    padding-top: 5%;
+}
+
+.col_left{
+    width:15%;
+}
+
+.col_padding{
+    padding-right: 3%;
+}
+
+.post_padding{
+    padding-top: 5%;
+}
+
+.comment_padding{
+    padding-top: 2%;
+}
+
+.col_padding_left{
+    padding-left:15%;
+}
+
+.normal_text{
+    font-weight: normal;
+}
+
+.nav_padding{
+    padding-left:10%;
+}
+
+.nav_padding_left{
+    padding-left:5%;
+}
+
+.border_padding{
+    padding-top:1%; padding-bottom:1%
+}
+
+.form_input{
+    width:60%;
+}
+
+.numbers_top_padding{
+    padding-top:5%;
+}
+
+.login_top{
+    padding-top:2%;
+}
+
+.padding_8_p{
+    padding-left:8%;
+}
+
+.padding_2_p{
+    padding-left:2%;
+}
+
+.left_col_reg{
+    padding-left:0%;
+}
+
+.button_height{
+    height:5%;
+}
+
+.justify{
+    text-align:justify;
+}
+
+.best_members_top{
+    padding-top:10%;
+}
+
+.button_margin{
+    margin-bottom:20px;
+}
+
+.padding_right{
+    magrin:1%;
+    padding-right:0%;
+}
+.padding_top_2{
+    padding-top:2%;
+    padding-bottom:2%;
+}
+
+.margin_for_row{
+    margin-right: 1%;
+    margin-left: 1%;
+}
+
+a.button_d_g{
+    color:green;
+    text-decoration: none;
+}
+
+a.button_w{
+    color:white;
+    text-decoration: none;
+}
+
+.margin_b{
+    margin-bottom:2%;
+}

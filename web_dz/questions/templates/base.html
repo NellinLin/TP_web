@@ -1,0 +1,88 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+      <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap/css/bootstrap.min.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/c_base.css' %}">
+
+    <title>AskPupkin</title>
+  </head>
+  <body>
+   <div class="c margin_b">
+
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+    <h5 class="nav_padding_left site_header"><a class="des" href="{% url 'index' %}">AskPupkin</a></h5>
+    <form class="nav_padding_left form-inline mt-2 mt-md-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+    </form>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><a class="button_d_g" href="{% url 'ask' %}">Ask!</a></button>
+    {% if user.is_authenticated %}
+    <img src="{% static 'image/avatar.png' %}" class="img_nav"></img>
+    <div class="padding_nav col-sm-3 col-sm-offset-1 blog-sidebar">
+        <div class="align_left_nav sidebar-module sidebar-module-inset">
+            <span class="text-dark" >{{user.username}}</span>
+            <p><a href="{% url 'settings' %}">settings</a>
+                <a href="{% url 'logout' %}?сontinue={{ request.path|urlencode }}">log out</a>
+            </p>
+        </div>
+    </div>
+    {% else %}
+     <div class="padding_nav col-sm-3 col-sm-offset-1 blog-sidebar">
+        <div class="align_left_nav sidebar-module sidebar-module-inset">
+            <p><a href="{% url 'login' %}?сontinue={{ request.path|urlencode }}">log in</a>
+            <a class="nav_padding" href="{% url 'register' %}">register</a>
+            </p>
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+
+    <!--ОСНОВНАЯ ЧАСТЬ САЙТА (колонки)-->
+    <div class="row">
+        <!--Левая колонка-->
+
+        <div class="padding_8_p col-sm-8 blog-main">
+            {% block content %}{% endblock %}
+
+        </div><!-- /.blog-main -->
+
+        <!--Правая колонка-->
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="justify sidebar-module sidebar-module-inset">
+            <h4>Popular Tags</h4>
+            <p>
+                {% for tag in tags %}
+                <!--<a href="/tag/{{ tag.title }}" class="des">{{ tag.title }}</a>-->
+                <a href="/tag/{{ tag.title }}" class="des">{{ tag.title }}</a>
+                {% endfor %}
+            </p>
+          </div>
+          <div class="best_members_top ccdsidebar-module">
+            <h4>Best Members</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">Mr.Freeman</a></li>
+              <li><a href="#">Dr.House</a></li>
+              <li><a href="#">Bender</a></li>
+              <li><a href="#">Queen Viktoria</a></li>
+              <li><a href="#">V.Pupkin</a></li>
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div>
+   </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h4>Log In</h4>
+
+
+{% if login_error %}
+<label class="login_top">
+    <span class="Red">{{login_error}}</span>
+</label>
+{% endif %}
+
+<form method="post">
+{% csrf_token %}
+
+    <div class="row padding_2_p login_top">
+        <!--Горизонтальное поле-->
+        <div class="left_col_reg col-md-3">
+            <label for="username">Login</label>
+        </div>
+
+        <div class="col-md-6 mb-3 left_col_reg" >
+            <input type="text" name="username" class="form-control" id="username" placeholder="Enter your login here" value="" required="">
+        </div>
+        <!-- -->
+    </div>
+
+    <div class="row padding_2_p">
+        <!--Горизонтальное поле-->
+        <div class="left_col_reg col-md-3">
+            <label for="password">Password</label>
+        </div>
+
+        <div class="col-md-6 mb-3 left_col_reg" >
+            <input type="text" name="password" class="form-control" id="password" placeholder="********" value="" required="">
+        </div>
+        <!-- -->
+    </div>
+
+    <div class="row padding_2_p">
+    <!--Горизонтальное поле-->
+        <div class="left_col_reg col-md-3">
+     </div>
+
+        <div class="col-md-4 mb-3 left_col_reg" >
+        <!--
+        <button type="submit" class=" btn btn-primary"><a class="button_w" href="{% url 'index' %}">Log In!</a></button>
+        -->
+            <input class="button btn btn-primary" type="submit" value="Login">
+            <p></p><a href="{% url 'register' %}">create new accaunt</a></p>
+         </div>
+    <!-- -->
+    </div>
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<h4>Tag: {{tag_name}}</h4>
+
+{% for question in questions %}
+<!--Post-->
+<div class="post_padding">
+<div class="row padding_2_p border margin_for_row padding_top_2">
+    <!--Горизонтальное поле-->
+    <div class="left_col_reg padding_right col-md-2">
+        <img src="{% static 'image/avatar.png' %}" class="img_avatar"></img>
+                <p></p>
+                <div class="col_padding_left">{{question.rating}}</div>
+                <div class="btn-group" >
+                        <button type="button" class="button_like">+</button>
+                        <button type="button" >-</button>
+                </div>
+    </div>
+
+    <div class="left_col_reg col-md-10 mb-3" >
+        <h2 class="header2"><a href="{% url 'question' question.id %}">{{question.title}}</a></h2>
+        <p class="normal_text">{{question.text}}</p>
+        <p class="normal_text"><a href="{% url 'question' question.id %}">answer({{question.answers}})</a>
+            <span class="left_padding">Tags: <a href="#">black-jack</a> <a href="#">{{tag_name}}</a>
+            </span>
+        </p>
+    </div>
+</div>
+</div>
+<!---->
+{% endfor %}
+
+<!--<div class="numbers_top_padding">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+-->
+
+{% endblock %}

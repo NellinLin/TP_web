@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h4>Settings: Dr.Pepper</h4>
+
+<div class="row padding_2_p login_top">
+
+    <!--Горизонтальное поле-->
+    <div class="left_col_reg col-md-3">
+        <label for="login">Login</label>
+    </div>
+
+    <div class="col-md-6 mb-3 left_col_reg" >
+        <input type="text" class="form-control" id="login" placeholder="dr_pepper" value="" required="">
+    </div>
+    <!-- -->
+</div>
+
+ <div class="row padding_2_p">
+
+    <!--Горизонтальное поле-->
+    <div class="left_col_reg col-md-3">
+        <label for="email">Email</label>
+    </div>
+
+    <div class="col-md-6 mb-3 left_col_reg" >
+        <input type="text" class="form-control" id="email" placeholder="drpepper@mail.ru" value="" required="">
+    </div>
+    <!-- -->
+</div>
+
+<div class="row padding_2_p">
+
+    <!--Горизонтальное поле-->
+    <div class="left_col_reg col-md-3">
+        <label for="nickname">NickName</label>
+    </div>
+
+    <div class="col-md-6 mb-3 left_col_reg" >
+        <input type="text" class="form-control" id="nickname" placeholder="Dr.Pepper" value="" required="">
+    </div>
+    <!-- -->
+</div>
+
+
+<div class="row padding_2_p">
+    <!--Горизонтальное поле-->
+    <div class="left_col_reg col-md-3">
+        <label for="uploadavatar">Upload avatar</label>
+    </div>
+
+    <div class="col-md-4 mb-3 left_col_reg" >
+        <img src="{% static 'image/avatar.png' %}" class="img_width"></img>
+    </div>
+    <!-- -->
+</div>
+
+<div class="row padding_2_p">
+    <!--Горизонтальное поле-->
+    <div class="left_col_reg col-md-3">
+    </div>
+
+    <div class="col-md-4 mb-3 left_col_reg" >
+        <input type="text" class="form-control" id="uploadavatar" placeholder="C:\avatar.jpg" value="" required="">
+    </div>
+    <button type="submit" class="button_height btn btn-primary">Choose</button>
+    <!-- -->
+</div>
+
+<div class="row padding_2_p">
+
+    <!--Горизонтальное поле-->
+    <div class="left_col_reg col-md-3">
+    </div>
+
+    <div class="col-md-4 mb-3 left_col_reg" >
+        <button type="submit" class=" btn btn-primary"><a class="button_w" href="{% url 'index' %}">Save</a></button>
+    </div>
+    <!-- -->
+</div>
+
+
+
+{% endblock %}

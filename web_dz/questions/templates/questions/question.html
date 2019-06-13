@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!--Post-->
+    <div class="post_padding">
+    <div class="row padding_2_p margin_for_row padding_top_2">
+        <!--Горизонтальное поле-->
+        <div class="left_col_reg padding_right col-md-2">
+            <img src="/{{question.author.avatar}}" class="img_avatar"></img>
+            <p>{{ question.author.username }}</p>
+            <div class="col_padding_left">{{question.rating}}</div>
+            <div class="btn-group" >
+                <button type="button" class="button_like">+</button>
+                <button type="button" >-</button>
+            </div>
+        </div>
+
+    <div class="left_col_reg col-md-10 mb-3" >
+        <h2 class="underline header2">{{question.title}}</h2>
+        <p class="normal_text">{{question.text}}</p>
+        <p class="normal_text">Tags: <a href="#">black-jack</a> <a href="#">bender</a>
+    </div>
+    </div>
+    </div>
+    <!---->
+
+    <hr>
+
+    {% for answer in answers %}
+    <div class="post_padding">
+    <div class="row padding_2_p border margin_for_row padding_top_2">
+        <!--Горизонтальное поле-->
+        <div class="left_col_reg padding_right col-md-2">
+            <img src="/{{answer.author.avatar}}" class="img_avatar"></img>
+                    <p></p>
+                    <div class="col_padding_left">{{answer.rating}}</div>
+                    <div class="btn-group" >
+
+                        <button type="button" class="button_like">+</button>
+                        <button type="button" >-</button>
+                    </div>
+         </div>
+
+    <div class="left_col_reg col-md-10 mb-3" >
+        <p class="normal_text">{{answer.text}}</p>
+        <div class="normal_text">
+            <input type="checkbox" name="Check1" value="Correct">  Correct</input>
+        </div>
+    </div>
+    </div>
+    </div>
+    {%endfor%}
+
+    <hr>
+    <div class="comment_padding top_padding">
+    <textarea class="form-control" id="validationTextarea" placeholder="Enter your ansver here"></textarea>
+    </div>
+    <div class="comment_padding">
+        <button class="button_margin btn btn-primary" type="submit"><a class="button_w" href="{% url 'question' questions_id %}">Answer</a></button>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <h4>New Question</h4>
+    <form>
+
+        <div class="top_padding">
+            <label for="inputTitle">Title</label>
+            <input type="title" class="form-control" id="inputTitle" placeholder="Title">
+        </div>
+        <div class="top_padding">
+            <label for="validationTextarea">Question</label>
+            <textarea class="form-control" id="validationTextarea" placeholder="Ask Question"></textarea>
+        </div>
+        <div class="top_padding">
+            <label for="inputTags">Tags</label>
+            <input type="tags" class="form-control" id="inputTags" placeholder="Tags">
+        </div>
+        <div class="top_padding">
+            <button class="btn btn-primary" type="submit"><a class="button_w" href="{% url 'index' %}">Ask</a></button>
+        </div>
+    </form>
+{% endblock %}
